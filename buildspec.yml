@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    command:
+      - yum install httpd 
+  pre_build:
+    commands:
+      - yum install httpd -y
+
+  build:
+    commands:
+     - echo build httpd
+artifacts:
+
+  files:
+    - '**/*'
